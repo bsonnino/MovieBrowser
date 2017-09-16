@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieBrowser.Views.MovieDetailPage"
+             Title="{Binding Title}" >
+    <RelativeLayout>
+        <Image Source="{Binding Movie.BackdropPath}" Opacity="0.2" RelativeLayout.WidthConstraint=
+               "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+               RelativeLayout.HeightConstraint=
+               "{ConstraintExpression Type=RelativeToParent, Property=Height}" Aspect="AspectFill"/>
+        <StackLayout Margin="20" Spacing="12" Padding="20" RelativeLayout.WidthConstraint=
+                     "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                      BackgroundColor="#20000000"  >
+            <Label Text="{Binding Movie.Overview}" FontSize="18" />
+            <Label Text="{Binding Movie.ReleaseDate, StringFormat='{0:d}'}" FontSize="16" />
+            <Label  Text="{Binding GenreStr}" FontSize="16" />
+        </StackLayout>
+    </RelativeLayout>
+</ContentPage>
